@@ -23,13 +23,13 @@ public class ArrayElement {
         System.out.println("Mảng vừa nhập là: " + Arrays.toString(array));
         int choose;
         do {
-            System.out.println("Nhập lựa chọn");
             System.out.println("1. Thêm phần tử vào mảng");
             System.out.println("2. Xóa phần tử khỏi mảng");
             System.out.println("3. Chèn phần tử vào mảng");
             System.out.println("4. Sửa phần tử trong mảng");
             System.out.println("5. Tìm kiếm phần tử trong mảng");
             System.out.println("0. Thoát chương trình");
+            System.out.print("Nhập lựa chọn: ");
             choose = inputNumber.nextInt();
             switch(choose){
                 case 1:
@@ -150,8 +150,10 @@ public class ArrayElement {
         for(int i = 0; i < array.length; i++){
             if(array[i] == element){
                 count++;
+                //return i;
             }
         }
+        //return -1;
         return count;
     }
 }
