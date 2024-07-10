@@ -28,6 +28,7 @@ public class ArrayElement {
             System.out.println("2. Xóa phần tử khỏi mảng");
             System.out.println("3. Chèn phần tử vào mảng");
             System.out.println("4. Sửa phần tử trong mảng");
+            System.out.println("5. Tìm kiếm phần tử trong mảng");
             System.out.println("0. Thoát chương trình");
             choose = inputNumber.nextInt();
             switch(choose){
@@ -81,6 +82,17 @@ public class ArrayElement {
                     array = editElement(array, indexEdit, editElement);
                     System.out.println("Mảng sau khi sửa là: " + Arrays.toString(array));
                     break;
+                case 5:
+                    System.out.println("Tìm kiếm phần tử trong mảng");
+                    System.out.print("Nhập phần tử muốn tìm kiếm: ");
+                    int elementSearch = inputNumber.nextInt();
+                    int count = searchElement(array, elementSearch);
+                    if(count == 0){
+                        System.out.println("Số " + elementSearch + " không xuất hiện trong mảng");
+                    } else {
+                        System.out.println("Số " + elementSearch + " xuất hiện " + count + " lần trong mảng");
+                    }
+                    break;
                 case 0:
                     //System.exit(0);
                     break;
@@ -131,5 +143,15 @@ public class ArrayElement {
             }
         }
         return newArray;
+    }
+
+    public static int searchElement(int[] array, int element){
+        int count = 0;
+        for(int i = 0; i < array.length; i++){
+            if(array[i] == element){
+                count++;
+            }
+        }
+        return count;
     }
 }
